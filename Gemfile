@@ -61,3 +61,6 @@ gem "font-awesome-rails"
 
 gem 'devise'
 
+gem 'annotate'
+
+gem 'will_paginate', '~> 3.1.0'

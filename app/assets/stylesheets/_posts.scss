@@ -48,11 +48,13 @@
 .posts.edit, .posts.new {
   .card {
     .card-block {
+      background-color: $alice-blue;
      
     }
     .card-title {
       margin-bottom: 0;
       font-size: 18px;
+
     }
     .list-group-item {
       padding: 10px;
@@ -60,6 +62,7 @@
       border-right: 0;
       input[type='text'], textarea {
         font-size: 14px;
+        background-color: $light-gray;
         
       }
       textarea {
@@ -115,4 +118,8 @@ p i {
 .card-topper {
     border-radius: 10px; 
     width: 90%; 
+}
+
+p img {
+  border-radius: 10px;
 }
