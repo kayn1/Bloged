@@ -127,3 +127,16 @@ p i {
 p img {
   border-radius: 10px;
 }
+
+
+body > div.container.posts.index > div.row > div:nth-child(1) > div > div.card-block > a {
+  width: 100%;
+}
+
+body > div.container.posts.index > div.row > div:nth-child(2) > div > div.card-block > a {
+  width: 100%;
+}
+
+body > div.container.posts.index > div.row > div:nth-child(3) > div > div.card-block > a {
+  width: 100%;
+}
