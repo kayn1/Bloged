@@ -56398,3 +56398,101 @@ Processing by Blog::PostsController#index as HTML
 Completed 200 OK in 133ms (Views: 127.6ms | ActiveRecord: 0.9ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-01-19 10:30:46 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Blog::PostsController#index as HTML
+  Rendering blog/posts/index.html.erb within layouts/author
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  Rendered collection of blog/posts/_post.html.erb [3 times] (9.8ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered blog/posts/index.html.erb within layouts/author (54.6ms)
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? ORDER BY "authors"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navbar.html.erb (36.9ms)
+Completed 200 OK in 638ms (Views: 603.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/?page=2" for 127.0.0.1 at 2017-01-19 10:30:51 +0100
+Processing by Blog::PostsController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering blog/posts/index.html.erb within layouts/author
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 3]]
+  Rendered collection of blog/posts/_post.html.erb [1 times] (5.6ms)
+  Rendered blog/posts/index.html.erb within layouts/author (11.0ms)
+  [1m[36mAuthor Load (0.6ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? ORDER BY "authors"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navbar.html.erb (4.8ms)
+Completed 200 OK in 154ms (Views: 149.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-01-19 10:30:52 +0100
+Processing by Blog::PostsController#index as HTML
+  Rendering blog/posts/index.html.erb within layouts/author
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  Rendered collection of blog/posts/_post.html.erb [3 times] (3.7ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered blog/posts/index.html.erb within layouts/author (10.4ms)
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? ORDER BY "authors"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navbar.html.erb (4.7ms)
+Completed 200 OK in 148ms (Views: 144.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/?page=2" for 127.0.0.1 at 2017-01-19 10:30:53 +0100
+Processing by Blog::PostsController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering blog/posts/index.html.erb within layouts/author
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 3]]
+  Rendered collection of blog/posts/_post.html.erb [1 times] (2.1ms)
+  Rendered blog/posts/index.html.erb within layouts/author (10.2ms)
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? ORDER BY "authors"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navbar.html.erb (4.6ms)
+Completed 200 OK in 131ms (Views: 127.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-01-19 10:30:55 +0100
+Processing by Blog::PostsController#index as HTML
+  Rendering blog/posts/index.html.erb within layouts/author
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  Rendered collection of blog/posts/_post.html.erb [3 times] (5.3ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered blog/posts/index.html.erb within layouts/author (13.5ms)
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? ORDER BY "authors"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navbar.html.erb (4.9ms)
+Completed 200 OK in 155ms (Views: 151.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-01-19 10:42:31 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Blog::PostsController#index as HTML
+  Rendering blog/posts/index.html.erb within layouts/author
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  Rendered collection of blog/posts/_post.html.erb [3 times] (12.3ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered blog/posts/index.html.erb within layouts/author (60.1ms)
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? ORDER BY "authors"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navbar.html.erb (38.3ms)
+Completed 200 OK in 630ms (Views: 575.5ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/?page=2" for 127.0.0.1 at 2017-01-19 10:42:36 +0100
+Processing by Blog::PostsController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering blog/posts/index.html.erb within layouts/author
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 3]]
+  Rendered collection of blog/posts/_post.html.erb [1 times] (3.0ms)
+  Rendered blog/posts/index.html.erb within layouts/author (9.6ms)
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? ORDER BY "authors"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navbar.html.erb (6.7ms)
+Completed 200 OK in 182ms (Views: 178.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-01-21 20:46:23 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Blog::PostsController#index as HTML
+  Rendering blog/posts/index.html.erb within layouts/author
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  Rendered collection of blog/posts/_post.html.erb [3 times] (13.6ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered blog/posts/index.html.erb within layouts/author (84.7ms)
+  Rendered layouts/_navbar.html.erb (9.2ms)
+Completed 200 OK in 675ms (Views: 635.4ms | ActiveRecord: 1.8ms)
+
+
