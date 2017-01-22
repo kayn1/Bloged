@@ -56701,3 +56701,15 @@ Processing by Blog::PostsController#index as HTML
 Completed 200 OK in 893ms (Views: 796.3ms | ActiveRecord: 15.8ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-01-22 22:53:19 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Blog::PostsController#index as HTML
+  Rendering blog/posts/index.html.erb within layouts/author
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  Rendered collection of blog/posts/_post.html.erb [3 times] (9.7ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered blog/posts/index.html.erb within layouts/author (60.7ms)
+  Rendered layouts/_navbar.html.erb (12.4ms)
+Completed 200 OK in 690ms (Views: 644.1ms | ActiveRecord: 10.2ms)
+
+
