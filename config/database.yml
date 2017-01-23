@@ -27,4 +27,32 @@ production:
 production:
   adapter: postgresql
   encoding: unicode
-  database: Your_appname_production
+  database: Bloged
+
+
+  development:
+  adapter: postgresql
+  encoding: utf8
+  database: project_development
+  pool: 5
+  username: 
+  password:
+
+test: &TEST
+  adapter: postgresql
+  encoding: utf8
+  database: project_test
+  pool: 5
+  username: 
+  password:
+
+production:
+  adapter: postgresql
+  encoding: utf8
+  database: project_production
+  pool: 5
+  username: 
+  password:
+
+cucumber:
+  <<: *TEST
