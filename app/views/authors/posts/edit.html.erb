@@ -1,9 +1,12 @@
 <% provide(:page_title, "Edit #{@post.title}") %>
 <% provide(:author, 'active') %>
 
+
 <%= render 'form', post: @post, url: authors_post_url(@post) %>
 
 <div class="buttons">
 	<%= link_to 'Show', @post, class: 'btn btn-md btn-primary' %>
 	<%= link_to 'Back', authors_posts_path, class: 'btn btn-md btn-warning' %>
 </div>
+
+
