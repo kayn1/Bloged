@@ -57029,3 +57029,138 @@ Processing by Blog::PostsController#index as HTML
 Completed 200 OK in 159ms (Views: 155.9ms | ActiveRecord: 0.9ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-01-23 20:49:34 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Blog::PostsController#index as HTML
+  Rendering blog/posts/index.html.erb within layouts/author
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  Rendered collection of blog/posts/_post.html.erb [3 times] (9.7ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered blog/posts/index.html.erb within layouts/author (127.0ms)
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? ORDER BY "authors"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navbar.html.erb (28.5ms)
+Completed 200 OK in 949ms (Views: 891.2ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/authors/posts" for 127.0.0.1 at 2017-01-23 20:49:40 +0100
+Processing by Authors::PostsController#index as HTML
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? ORDER BY "authors"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering authors/posts/index.html.erb within layouts/author
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = ? ORDER BY "posts"."published_at" DESC[0m  [["author_id", 1]]
+  Rendered collection of authors/posts/_post.html.erb [4 times] (5.6ms)
+  Rendered authors/posts/index.html.erb within layouts/author (25.3ms)
+  Rendered layouts/_navbar.html.erb (4.7ms)
+Completed 200 OK in 235ms (Views: 148.6ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/authors/posts/off-camera" for 127.0.0.1 at 2017-01-23 20:49:46 +0100
+Processing by Authors::PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"/4aFHXJJ58yjzvbCw2PVbdrgqf0kBKi04xVXHQnHa7N/lZxX0uZ8vQPrqalXpwwVzNavlRDMa5RnPVQBmx2cvw==", "id"=>"off-camera"}
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? ORDER BY "authors"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."author_id" = ? AND "posts"."slug" = ? ORDER BY "posts"."id" ASC LIMIT ?[0m  [["author_id", 1], ["slug", "off-camera"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (120.6ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 14]]
+  [1m[35m (267.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/authors/posts
+Completed 302 Found in 404ms (ActiveRecord: 389.0ms)
+
+
+Started GET "/authors/posts" for 127.0.0.1 at 2017-01-23 20:49:46 +0100
+Processing by Authors::PostsController#index as HTML
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? ORDER BY "authors"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering authors/posts/index.html.erb within layouts/author
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = ? ORDER BY "posts"."published_at" DESC[0m  [["author_id", 1]]
+  Rendered collection of authors/posts/_post.html.erb [3 times] (7.5ms)
+  Rendered authors/posts/index.html.erb within layouts/author (12.2ms)
+  Rendered layouts/_navbar.html.erb (2.9ms)
+Completed 200 OK in 191ms (Views: 181.8ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/authors/sign_out" for 127.0.0.1 at 2017-01-23 20:49:48 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"dqVxR6wEJJhmv2xiWCQ7w+uZHVcD7/DO38tSAa3RZsv2tmgNDKu/6caaMwnM4OK7/a8bPzcnM+5b41EdPwuRxw=="}
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? ORDER BY "authors"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 29ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-01-23 20:49:48 +0100
+Processing by Blog::PostsController#index as HTML
+  Rendering blog/posts/index.html.erb within layouts/author
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  Rendered collection of blog/posts/_post.html.erb [3 times] (4.7ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered blog/posts/index.html.erb within layouts/author (11.3ms)
+  Rendered layouts/_navbar.html.erb (10.5ms)
+Completed 200 OK in 162ms (Views: 158.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-01-23 20:49:50 +0100
+Processing by Blog::PostsController#index as HTML
+  Rendering blog/posts/index.html.erb within layouts/author
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  Rendered collection of blog/posts/_post.html.erb [3 times] (6.8ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered blog/posts/index.html.erb within layouts/author (14.8ms)
+  Rendered layouts/_navbar.html.erb (2.9ms)
+Completed 200 OK in 160ms (Views: 156.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-01-23 22:36:55 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Blog::PostsController#index as HTML
+  Rendering blog/posts/index.html.erb within layouts/author
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  Rendered collection of blog/posts/_post.html.erb [3 times] (9.6ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered blog/posts/index.html.erb within layouts/author (59.8ms)
+  Rendered layouts/_navbar.html.erb (9.6ms)
+Completed 200 OK in 19473ms (Views: 19400.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/authors/sign_in" for 127.0.0.1 at 2017-01-23 22:37:30 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/daniel/.rvm/gems/ruby-2.3.1/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/author
+  Rendered /home/daniel/.rvm/gems/ruby-2.3.1/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (3.2ms)
+  Rendered /home/daniel/.rvm/gems/ruby-2.3.1/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/author (256.5ms)
+  Rendered layouts/_navbar.html.erb (2.7ms)
+Completed 200 OK in 468ms (Views: 417.7ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/authors/sign_in" for 127.0.0.1 at 2017-01-23 22:37:34 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"exZG4EGKhGtoXp5h1cMlapdTnjHrR18HKpVkQFnbelCHySspWfg86DpsHyFRkaxypyly+hC/AMboXGQJ9nrcWg==", "author"=>{"email"=>"kayn1@wp.pl", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mAuthor Load (0.8ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."email" = ? ORDER BY "authors"."id" ASC LIMIT ?[0m  [["email", "kayn1@wp.pl"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[33mUPDATE "authors" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "authors"."id" = ?[0m  [["current_sign_in_at", 2017-01-23 21:37:34 UTC], ["last_sign_in_at", 2017-01-22 22:07:05 UTC], ["sign_in_count", 13], ["updated_at", 2017-01-23 21:37:34 UTC], ["id", 1]]
+  [1m[35m (146.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 789ms (ActiveRecord: 148.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-01-23 22:37:34 +0100
+Processing by Blog::PostsController#index as HTML
+  Rendering blog/posts/index.html.erb within layouts/author
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  Rendered collection of blog/posts/_post.html.erb [3 times] (3.5ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered blog/posts/index.html.erb within layouts/author (14.2ms)
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? ORDER BY "authors"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navbar.html.erb (4.5ms)
+Completed 200 OK in 174ms (Views: 169.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-01-23 22:37:38 +0100
+Processing by Blog::PostsController#index as HTML
+  Rendering blog/posts/index.html.erb within layouts/author
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  Rendered collection of blog/posts/_post.html.erb [3 times] (5.3ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered blog/posts/index.html.erb within layouts/author (12.1ms)
+  [1m[36mAuthor Load (0.7ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? ORDER BY "authors"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navbar.html.erb (5.2ms)
+Completed 200 OK in 161ms (Views: 154.2ms | ActiveRecord: 1.7ms)
+
+
