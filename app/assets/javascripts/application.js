@@ -23,7 +23,6 @@
 
 document.addEventListener("turbolinks:load", function() {
   tinymce.remove();
-  window.tinymce.dom.Event.domLoaded = true;
   tinymce.init({ 
   	height: '475',
   	selector:'textarea#post_body',

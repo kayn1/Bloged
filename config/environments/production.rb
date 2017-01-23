@@ -13,6 +13,7 @@ Rails.application.configure do
   #Added by me
   config.serve_static_assets = true
   config.assets.digest = true
+ 
 
   
   # Full error reports are disabled and caching is turned on.
