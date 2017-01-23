@@ -57262,3 +57262,82 @@ Processing by Blog::PostsController#index as HTML
 Completed 200 OK in 176ms (Views: 172.4ms | ActiveRecord: 0.9ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-01-23 23:12:50 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Blog::PostsController#index as HTML
+  Rendering blog/posts/index.html.erb within layouts/author
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  Rendered collection of blog/posts/_post.html.erb [3 times] (9.1ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered blog/posts/index.html.erb within layouts/author (37.6ms)
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? ORDER BY "authors"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navbar.html.erb (24.8ms)
+Completed 500 Internal Server Error in 1871ms (ActiveRecord: 3.2ms)
+
+
+  
+ActionView::Template::Error ((<unknown>): did not find expected '-' indicator while parsing a block collection at line 5 column 3):
+    20:     <p class="notice"><%= notice %></p>
+    21:     <p class="alert"><%= alert %></p>
+    22:     <%= tinymce_assets %> 
+    23:     <%= tinymce %>
+    24: 
+    25: 	   <%= yield %>
+    26: 
+  
+app/views/layouts/author.html.erb:23:in `_app_views_layouts_author_html_erb__449567201_81584710'
+  Rendering /home/daniel/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/daniel/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/daniel/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.5ms)
+  Rendering /home/daniel/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/daniel/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendering /home/daniel/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/daniel/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/daniel/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (53.1ms)
+Started GET "/" for 127.0.0.1 at 2017-01-23 23:13:03 +0100
+Processing by Blog::PostsController#index as HTML
+  Rendering blog/posts/index.html.erb within layouts/author
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  Rendered collection of blog/posts/_post.html.erb [3 times] (4.2ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered blog/posts/index.html.erb within layouts/author (9.2ms)
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? ORDER BY "authors"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navbar.html.erb (4.6ms)
+Completed 200 OK in 152ms (Views: 148.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/authors/posts" for 127.0.0.1 at 2017-01-23 23:13:06 +0100
+Processing by Authors::PostsController#index as HTML
+  [1m[36mAuthor Load (4.4ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? ORDER BY "authors"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering authors/posts/index.html.erb within layouts/author
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = ? ORDER BY "posts"."published_at" DESC[0m  [["author_id", 1]]
+  Rendered collection of authors/posts/_post.html.erb [3 times] (8.6ms)
+  Rendered authors/posts/index.html.erb within layouts/author (17.5ms)
+  Rendered layouts/_navbar.html.erb (2.8ms)
+Completed 200 OK in 181ms (Views: 143.1ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/authors/posts/a-little-about-mountains/edit" for 127.0.0.1 at 2017-01-23 23:13:09 +0100
+Processing by Authors::PostsController#edit as HTML
+  Parameters: {"id"=>"a-little-about-mountains"}
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? ORDER BY "authors"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."author_id" = ? AND "posts"."slug" = ? ORDER BY "posts"."id" ASC LIMIT ?[0m  [["author_id", 1], ["slug", "a-little-about-mountains"], ["LIMIT", 1]]
+  Rendering authors/posts/edit.html.erb within layouts/author
+  Rendered authors/posts/_form.html.erb (33.0ms)
+  Rendered authors/posts/edit.html.erb within layouts/author (36.0ms)
+  Rendered layouts/_navbar.html.erb (2.7ms)
+Completed 200 OK in 175ms (Views: 163.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/authors/posts/a-little-about-mountains/edit" for 127.0.0.1 at 2017-01-23 23:13:18 +0100
+Processing by Authors::PostsController#edit as HTML
+  Parameters: {"id"=>"a-little-about-mountains"}
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? ORDER BY "authors"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."author_id" = ? AND "posts"."slug" = ? ORDER BY "posts"."id" ASC LIMIT ?[0m  [["author_id", 1], ["slug", "a-little-about-mountains"], ["LIMIT", 1]]
+  Rendering authors/posts/edit.html.erb within layouts/author
+  Rendered authors/posts/_form.html.erb (5.3ms)
+  Rendered authors/posts/edit.html.erb within layouts/author (10.8ms)
+  Rendered layouts/_navbar.html.erb (2.4ms)
+Completed 200 OK in 136ms (Views: 127.5ms | ActiveRecord: 0.7ms)
+
+
