@@ -70,6 +70,8 @@ gem 'bootstrap-sass', '~> 3.3.6'
 
 gem 'tinymce-rails'
 
+gem 'rails_12factor'
+
 
 group :development do
   gem 'sqlite3'
@@ -78,4 +80,5 @@ end
 group :production do
   gem 'pg'
   gem 'rails_12factor'
+ 
 end

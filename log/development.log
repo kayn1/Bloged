@@ -57402,11 +57402,18 @@ Processing by Blog::PostsController#index as HTML
 Completed 200 OK in 848ms (Views: 807.1ms | ActiveRecord: 3.2ms)
 
 
+<<<<<<< HEAD
 Started GET "/" for 127.0.0.1 at 2017-01-26 03:04:07 +0100
+=======
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mPost Load (3.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Started GET "/" for 127.0.0.1 at 2017-01-24 18:42:08 +0100
+>>>>>>> 304c790a2df9ba8f0d3504022f0b8ee984422f14
   [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
 Processing by Blog::PostsController#index as HTML
   Rendering blog/posts/index.html.erb within layouts/author
   [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 0]]
+<<<<<<< HEAD
   Rendered collection of blog/posts/_post.html.erb [3 times] (9.7ms)
   [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
   Rendered blog/posts/index.html.erb within layouts/author (36.4ms)
@@ -58724,10 +58731,91 @@ Completed 200 OK in 215ms (Views: 210.5ms | ActiveRecord: 0.8ms)
 
 
 Started GET "/authors/posts" for 127.0.0.1 at 2017-01-26 16:35:43 +0100
+=======
+  Rendered collection of blog/posts/_post.html.erb [3 times] (12.3ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered blog/posts/index.html.erb within layouts/author (100.8ms)
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? ORDER BY "authors"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navbar.html.erb (35.4ms)
+Completed 200 OK in 3815ms (Views: 3753.2ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/authors/posts" for 127.0.0.1 at 2017-01-24 18:42:16 +0100
+Processing by Authors::PostsController#index as HTML
+  [1m[36mAuthor Load (0.8ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? ORDER BY "authors"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering authors/posts/index.html.erb within layouts/author
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = ? ORDER BY "posts"."published_at" DESC[0m  [["author_id", 1]]
+  Rendered collection of authors/posts/_post.html.erb [3 times] (9.5ms)
+  Rendered authors/posts/index.html.erb within layouts/author (27.8ms)
+  Rendered layouts/_navbar.html.erb (2.9ms)
+Completed 200 OK in 527ms (Views: 212.7ms | ActiveRecord: 1.3ms)
+
+
+Started PUT "/authors/posts/a-little-about-mountains/unpublish" for 127.0.0.1 at 2017-01-24 18:42:18 +0100
+Processing by Authors::PostsController#unpublish as HTML
+  Parameters: {"authenticity_token"=>"Z7wMjBHaWzhhk+kAQy6NWfQoJ1VxGYUSlUUXvYr+RNVdLJwuwluJaik+0+LopDY/ZcWsPjH14Xtje5e9u1F/Fw==", "id"=>"a-little-about-mountains"}
+  [1m[36mAuthor Load (0.9ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? ORDER BY "authors"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."author_id" = ? AND "posts"."slug" = ? ORDER BY "posts"."id" ASC LIMIT ?[0m  [["author_id", 1], ["slug", "a-little-about-mountains"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (14.3ms)[0m  [1m[33mUPDATE "posts" SET "published" = ?, "published_at" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["published", false], ["published_at", nil], ["updated_at", 2017-01-24 17:42:18 UTC], ["id", 10]]
+  [1m[35m (208.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/authors/posts
+Completed 302 Found in 243ms (ActiveRecord: 224.3ms)
+
+
+Started GET "/authors/posts" for 127.0.0.1 at 2017-01-24 18:42:18 +0100
+Processing by Authors::PostsController#index as HTML
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? ORDER BY "authors"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering authors/posts/index.html.erb within layouts/author
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = ? ORDER BY "posts"."published_at" DESC[0m  [["author_id", 1]]
+  Rendered collection of authors/posts/_post.html.erb [3 times] (3.9ms)
+  Rendered authors/posts/index.html.erb within layouts/author (8.3ms)
+  Rendered layouts/_navbar.html.erb (2.2ms)
+Completed 200 OK in 138ms (Views: 132.0ms | ActiveRecord: 0.8ms)
+
+
+Started PUT "/authors/posts/a-little-about-mountains/publish" for 127.0.0.1 at 2017-01-24 18:42:22 +0100
+Processing by Authors::PostsController#publish as HTML
+  Parameters: {"authenticity_token"=>"r8HMl/Ojev4ZO2LaeEvWx1P/+kppMVSERh7XPP4fNOaVUVw1ICKorFGWWDjTwW2hwhJxISndMO2wIFc8z7APJA==", "id"=>"a-little-about-mountains"}
+  [1m[36mAuthor Load (0.9ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? ORDER BY "authors"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."author_id" = ? AND "posts"."slug" = ? ORDER BY "posts"."id" ASC LIMIT ?[0m  [["author_id", 1], ["slug", "a-little-about-mountains"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[33mUPDATE "posts" SET "published" = ?, "published_at" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["published", true], ["published_at", 2017-01-24 17:42:22 UTC], ["updated_at", 2017-01-24 17:42:22 UTC], ["id", 10]]
+  [1m[35m (161.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/authors/posts
+Completed 302 Found in 180ms (ActiveRecord: 164.2ms)
+
+
+Started GET "/authors/posts" for 127.0.0.1 at 2017-01-24 18:42:22 +0100
+Processing by Authors::PostsController#index as HTML
+  [1m[36mAuthor Load (0.8ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? ORDER BY "authors"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering authors/posts/index.html.erb within layouts/author
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = ? ORDER BY "posts"."published_at" DESC[0m  [["author_id", 1]]
+  Rendered collection of authors/posts/_post.html.erb [3 times] (7.1ms)
+  Rendered authors/posts/index.html.erb within layouts/author (12.4ms)
+  Rendered layouts/_navbar.html.erb (2.6ms)
+Completed 200 OK in 154ms (Views: 148.4ms | ActiveRecord: 1.2ms)
+
+
+Started DELETE "/authors/posts/say-goodbye-to-puring-rain" for 127.0.0.1 at 2017-01-24 18:42:28 +0100
+Processing by Authors::PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"bphh1Q7tmE9lgHCTbfI/+kQA1vur7ldC3U8lBMVB8MFUCPF33WxKHS0tSnHGeISc1e1dkOsCMysrcaUE9O7LAw==", "id"=>"say-goodbye-to-puring-rain"}
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? ORDER BY "authors"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."author_id" = ? AND "posts"."slug" = ? ORDER BY "posts"."id" ASC LIMIT ?[0m  [["author_id", 1], ["slug", "say-goodbye-to-puring-rain"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 11]]
+  [1m[35m (206.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/authors/posts
+Completed 302 Found in 219ms (ActiveRecord: 208.5ms)
+
+
+Started GET "/authors/posts" for 127.0.0.1 at 2017-01-24 18:42:29 +0100
+>>>>>>> 304c790a2df9ba8f0d3504022f0b8ee984422f14
 Processing by Authors::PostsController#index as HTML
   [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? ORDER BY "authors"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
   Rendering authors/posts/index.html.erb within layouts/author
   [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = ? ORDER BY "posts"."published_at" DESC[0m  [["author_id", 1]]
+<<<<<<< HEAD
   Rendered collection of authors/posts/_post.html.erb [1 times] (3.5ms)
   Rendered authors/posts/index.html.erb within layouts/author (18.1ms)
   Rendered layouts/_navbar.html.erb (2.6ms)
@@ -58828,5 +58916,22 @@ Processing by Authors::PostsController#index as HTML
   Rendered authors/posts/index.html.erb within layouts/author (2.5ms)
   Rendered layouts/_navbar.html.erb (2.8ms)
 Completed 200 OK in 141ms (Views: 134.1ms | ActiveRecord: 0.7ms)
+=======
+  Rendered collection of authors/posts/_post.html.erb [2 times] (2.8ms)
+  Rendered authors/posts/index.html.erb within layouts/author (10.1ms)
+  Rendered layouts/_navbar.html.erb (2.3ms)
+Completed 200 OK in 177ms (Views: 172.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-01-24 18:42:31 +0100
+Processing by Blog::PostsController#index as HTML
+  Rendering blog/posts/index.html.erb within layouts/author
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  Rendered collection of blog/posts/_post.html.erb [2 times] (7.0ms)
+  Rendered blog/posts/index.html.erb within layouts/author (11.4ms)
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? ORDER BY "authors"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navbar.html.erb (6.1ms)
+Completed 200 OK in 161ms (Views: 157.8ms | ActiveRecord: 0.7ms)
+>>>>>>> 304c790a2df9ba8f0d3504022f0b8ee984422f14
 
 
