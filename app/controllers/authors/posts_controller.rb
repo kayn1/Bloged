@@ -24,7 +24,7 @@ module Authors
   end
 
   def publish
-    @post.update(published: true, published_at: Time.now)
+    @post.update_attributes(published: true, published_at: Time.now)
     redirect_to authors_posts_url
   end
 
