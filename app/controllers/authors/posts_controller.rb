@@ -6,6 +6,7 @@ module Authors
   # GET /posts.json
   def index
     @posts = current_author.posts.most_recent
+
   end
 
   # GET /posts/1
@@ -65,7 +66,7 @@ module Authors
 
   # DELETE /posts/1
   # DELETE /posts/1.json
-  def destroy
+  def delete
     @post.destroy
     respond_to do |format|
       format.html { redirect_to authors_posts_url, notice: 'Post was successfully destroyed.' }
