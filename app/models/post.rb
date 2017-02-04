@@ -21,7 +21,7 @@ class Post < ApplicationRecord
 
   belongs_to :author
 
-  scope :most_recent, -> { order(updated_at: :desc) }
+  scope :most_recent, -> { order(created_at: :desc) }
   scope :published, -> { where(published: true) }
 
   def should_generate_new_friendly_id?
