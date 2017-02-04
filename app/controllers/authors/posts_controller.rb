@@ -7,6 +7,7 @@ module Authors
   def index
     @posts = current_author.posts.most_recent
     @posts.order(published_at: :desc)
+    @@posts = Post.published
 
   end
 
