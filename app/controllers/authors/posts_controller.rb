@@ -5,7 +5,7 @@ module Authors
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all.order(published_at: :desc)
+    @posts = Post.all.order(published_at: :asc)
   
   end
 
