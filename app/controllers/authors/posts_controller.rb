@@ -6,8 +6,7 @@ module Authors
   # GET /posts.json
   def index
     @posts = Post.all.most_recent
-    @posts.published(published: true)
-  
+      
   end
 
   # GET /posts/1
