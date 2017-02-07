@@ -10,16 +10,13 @@
 
     <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
     <script>
-          document.addEventListener("turbolinks:load", function() {
-            tinymce.remove();
-            tinymce.init({ 
+          tinymce.init({ 
             height: '475',
             selector:'textarea#post_body',
             plugins: "codesample image media colorpicker link",
             menubar: "insert",
             toolbar: "undo | redo | styleselect | bold italic | codesample | image media | forecolor backcolor | link"
-     });
-})
+           });
     </script>
     
   </head>
