@@ -26,8 +26,9 @@ document.addEventListener("turbolinks:load", function() {
   tinymce.init({ 
   	height: '475',
   	selector:'textarea#post_body',
-  	plugins: "codesample image media colorpicker",
-    toolbar: "undo | redo | styleselect | bold italic | codesample | image media | forecolor backcolor"
+  	plugins: "codesample image media colorpicker link",
+  	menubar: "insert",
+    toolbar: "undo | redo | styleselect | bold italic | codesample | image media | forecolor backcolor | link"
   	 });
 })
 
