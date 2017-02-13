@@ -13,6 +13,7 @@ Rails.application.configure do
   #Added by me
   config.serve_static_assets = true
   config.assets.digest = true
+  config.assets.version = '1.1'
   
  
 

@@ -28,7 +28,7 @@ document.addEventListener("turbolinks:load", function() {
   	selector:'textarea#post_body',
   	plugins: "codesample image media colorpicker link",
   	menubar: "insert",
-    toolbar: "undo | redo | styleselect | bold italic | codesample | image media | forecolor backcolor | link"
+    toolbar: "undo | redo | styleselect | bold italic | codesample | image media | "
   	 });
 })
 
