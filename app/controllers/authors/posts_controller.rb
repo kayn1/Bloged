@@ -59,7 +59,7 @@ module Authors
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
   end
-
+end
 
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
@@ -96,5 +96,5 @@ module Authors
     def post_params
       params.require(:post).permit(:title, :body, :description, :banner_image_url)
     end
-end
+  end
 end
