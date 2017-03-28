@@ -64,7 +64,7 @@ end
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def destroy
-    @post.destroy
+    @post.delete
     respond_to do |format|
       if @post.update(post_params)
         format.html { redirect_to authors_post_path(@post), notice: 'Post was successfully updated.' }
@@ -79,7 +79,7 @@ end
   # DELETE /posts/1
   # DELETE /posts/1.json
   def delete
-    @post.destroy
+    @post.delete
     respond_to do |format|
       format.html { redirect_to authors_posts_url, notice: 'Post was successfully destroyed.' }
       format.json { head :no_content }
@@ -94,7 +94,13 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :body, :description, :banner_image_url)
+      params.require(:post).
+      permit(
+      :title,
+      :body,
+      :description,
+      :banner_image_url
+      )
     end
   end
 end
