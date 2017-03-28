@@ -34,7 +34,6 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-gem 'twitter-bootstrap-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -67,8 +66,6 @@ gem 'devise'
 gem 'annotate'
 
 gem 'will_paginate', '~> 3.1.0'
-
-gem 'bootstrap-sass', '~> 3.3.6'
 
 gem 'tinymce-rails'
 
