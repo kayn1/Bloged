@@ -53,6 +53,12 @@ class UsersController < ApplicationController
 
   # DELETE /users/1
   # DELETE /users/1.json
+
+  def delete
+    
+  end
+
+
   def destroy
     @user.destroy
     respond_to do |format|
