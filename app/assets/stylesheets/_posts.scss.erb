@@ -124,9 +124,25 @@ p i {
     width: 90%; 
 }
 
-p img {
-  border-radius: 10px;
-  border-image-repeat: stretch;
+p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    border-radius: 10px;
+    border-image-repeat: stretch;
+    height: 500px;
+    width: 760px;
+    margin: 50px 20px;
+  }
+}
+
+
+.flex-center {
+  display: flex;
+  justify-content: center;
 }
 
 
@@ -143,5 +159,5 @@ body > div.container.posts.index > div.row > div:nth-child(3) > div > div.card-b
 }
 
 body > div.container.posts.show > div > div > h1  {
-      color: #00c0ff;
+      color: #434b4e;
 }
