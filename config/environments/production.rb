@@ -12,10 +12,9 @@ Rails.application.configure do
   config.serve_static_files = true
 
   #Added by me
-  config.serve_static_assets = true
   config.assets.digest = true
   config.assets.version = '1.1'
-  
+  config.public_file_server.enabled
  
 
   
