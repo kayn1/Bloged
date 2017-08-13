@@ -39,10 +39,18 @@
               <%= f.text_area :description, class: 'form-control' %>
           </div>
         </li>
-        <li>
+        <li class="list-group-item">
+          <div class="field">
+            <%= f.label 'Tags' %>
+            <%= f.text_field :tag_list, class: 'form-control' %>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="field">
            <div class="actions">
               <%= f.submit "Save post", class: 'btn btn-success btn-lg btn-block' %>
            </div>
+          </div>
         </li>
       </ul>
    </div>
@@ -52,9 +60,9 @@
     <div class="col-md-8" %>
       <div class="field">
         <%= f.text_area :body %>
+      </div>
     </div>
-</div>
 
-</div>
+  </div>
  
 <% end %>

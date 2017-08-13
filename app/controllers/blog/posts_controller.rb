@@ -4,8 +4,11 @@ module Blog
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.published
-    @posts = Post.paginate(:page => params[:page], per_page: 3).order('created_at DESC')
+    if params[:tag].present?
+      @posts = Post.most_recent.published.tagged_with(params[:tag]).paginate(:page => params[:page], per_page: 3).order('created_at DESC')
+    else
+      @posts = Post.published.paginate(:page => params[:page], per_page: 3).order('created_at DESC')
+    end
   end
 
   # GET /posts/1

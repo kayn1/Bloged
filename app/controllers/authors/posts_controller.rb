@@ -88,7 +88,8 @@ end
       :title,
       :body,
       :description,
-      :banner_image_url
+      :banner_image_url,
+      :tag_list
       )
     end
   end
