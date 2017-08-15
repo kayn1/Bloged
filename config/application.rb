@@ -15,6 +15,8 @@ module Bloged
     # -- all .rb files in that directory are automatically loaded.
     config.tinymce.install
     config.serve_static_assets = true
+    config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
+		config.i18n.default_locale = :pl
 
   
   end

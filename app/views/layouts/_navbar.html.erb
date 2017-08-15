@@ -34,7 +34,7 @@
     <button class="navbar-toggler hidden-sm-up pull-xs-right" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
       &#9776;
     </button>
-    <ul class="nav navbar-nav navbar-right  pull-sm-right hidden-xs-down">
+    <ul class="nav navbar-nav navbar-right pull-sm-right hidden-xs-down">
       <li class="nav-item">
         <%= link_to 'Blog', root_path, class: "nav-link #{yield(:blog_active)}" %>
       </li>
@@ -47,12 +47,20 @@
       </li> -->
     
      <% if author_signed_in? %>
-        <li class="nav-item">
+  <!--       <li class="nav-item">
           <%= link_to 'My posts', authors_posts_path, class: "nav-link #{yield(:author)}" %>
         </li> 
         <li class="nav-item">
           <%= link_to 'Wyloguj', destroy_author_session_path, method: :delete, class: "nav-link " %>
-        </li> 
+        </li>  -->
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Autor</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <%= link_to 'Wyloguj', destroy_author_session_path, method: :delete, class: "dropdown-item" %>
+            <%= link_to 'Konto', '#', class: "dropdown-item #{yield(:author)}" %>
+            <%= link_to 'Moje posty', authors_posts_path, class: "dropdown-item #{yield(:author)}" %>
+          </div>
+        </li>
      <% end %>
 
       <li class="instagram">
@@ -76,4 +84,6 @@
   ga('create', 'UA-91026627-1', 'auto');
   ga('send', 'pageview');
 
+
 </script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
