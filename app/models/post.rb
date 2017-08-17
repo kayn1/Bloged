@@ -17,9 +17,9 @@ class Post < ApplicationRecord
 
   def published_date
     if published_at.present?
-    "#{published_at.strftime('%-d - %B - %Y')}"
-  else
-    "Not published yet"
+      "#{published_at.strftime('%B - %d - %Y')}"
+    else
+      "Not published yet"
     end
   end
 
