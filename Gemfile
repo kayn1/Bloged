@@ -65,6 +65,7 @@ gem 'tinymce-rails'
 gem 'rails_12factor'
 gem 'acts-as-taggable-on', '~> 4.0'
 gem 'i18n', '~> 0.7.0'
+gem 'bootstrap_form'
 
 
 

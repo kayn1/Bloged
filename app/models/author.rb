@@ -6,5 +6,5 @@ class Author < ApplicationRecord
 
   has_many :posts       
 
- 	
+ 	validates :current_password, presence: true
 end
