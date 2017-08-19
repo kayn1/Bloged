@@ -41,6 +41,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'sqlite3'
+  gem 'pry-rails', '~> 0.3.4'
 end
 
 group :development do
@@ -54,27 +55,16 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
 gem 'friendly_id', '~> 5.1.0' 
-
 gem 'bootstrap', '~> 4.0.0.alpha3'
-
 gem "font-awesome-rails"
-
 gem 'devise'
-
 gem 'annotate'
-
 gem 'will_paginate', '~> 3.1.0'
-
 gem 'tinymce-rails'
-
 gem 'rails_12factor'
-
 gem 'acts-as-taggable-on', '~> 4.0'
-
 gem 'i18n', '~> 0.7.0'
-
 
 
 

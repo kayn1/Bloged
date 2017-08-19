@@ -1,0 +1,32 @@
+<%= notice %>
+<div id="ajax">
+  <%= form_tag authors_update_author_path, method: :put, remote: true do %>
+    <%= fields_for :author do |f| %>
+    <div class="col-md-4">
+      <ul class="list-group list-group-flush" id="">
+        <li class="list-group-item">
+            <div class="field">
+              <%= f.label :name %>
+              <br>
+              <%= f.text_field :name, value: current_author.name, class: 'form-control'  %>
+            </div>
+        </li>
+        <li class="list-group-item">
+            <div class="field">
+              <%= f.label :email %>
+              <br>
+              <%= f.email_field :email, value: current_author.email, class: 'form-control' %>
+            </div>
+        </li>
+        <li class="list-group-item">
+          <div class="field">
+           <div class="actions">
+              <%= f.submit "Edit info", class: 'btn btn-success btn-lg btn-block', remote: true %>
+           </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <% end %>
+  <% end %>
+</div>
