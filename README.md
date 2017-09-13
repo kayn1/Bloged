@@ -1,3 +1,3 @@
 # aszken
 
-[Check this out] (**aszken.herokuapp.com**)
+Check this out (aszken.herokuapp.com)
