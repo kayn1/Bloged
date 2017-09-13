@@ -1,9 +1,14 @@
-<%= notice %>
+<span id="notice-info"><%= notice %></span>
 <div id="ajax">
   <%= form_tag authors_update_author_path, method: :put, remote: true do %>
     <%= fields_for :author do |f| %>
     <div class="col-md-4">
       <ul class="list-group list-group-flush" id="">
+        <li class="list-group-item">
+          <div class="field">
+            <%= image_tag gravatar_url("kayn1@wp.pl", 120), alt: "", id: 'gravatar' %>
+          </div>
+        </li>
         <li class="list-group-item">
             <div class="field">
               <%= f.label :name %>

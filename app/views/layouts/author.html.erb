@@ -23,7 +23,7 @@
   <body class="container-fluid">
     <%= render 'layouts/navbar' %>
   	<div class="container <%= controller_name %> <%= action_name %>">	
-
+  
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
@@ -32,6 +32,14 @@
 	   <%= yield %>
 
 	</div>
- 
+  <script>
+    if($('.notice').is(':empty')) {
+      $(".notice").hide();
+    };
+
+    if ($('.alert').is(':empty')) {
+      $(".alert").hide();
+    }
+  </script>
   </body>
 </html>

@@ -12,19 +12,21 @@ module Authors
           format.json { render json: current_author, status: :updated}
         else
           format.html { render :edit }
-          flash[:error] = 'Fail'
+          format.js { flash[:alert] = 'Fail' }
         end
       end
     end
 
     def update_password
-      pass_data = author_password_params
-      if current_author.valid_password?(pass_data[:current_password])
-        current_password.update(
-          password: pass_data[:current_password],
-          password_confirmation: pass_data[:current_password_confirmation]
-        )
+      if current_author.valid_password?(author_password_params[:current_password])
+        if current_author.change_password(author_password_params)
+          sign_in(current_author, byapass: true)
+          flash[:success] = 'password changed'
+        else
+          flash[:danger] = 'incorrect'
+        end
       end
+      redirect_to root_url
     end
 
     private 
