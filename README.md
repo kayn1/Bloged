@@ -1,3 +1,3 @@
-# aszken
+# aszken blog
 
-Check this out (aszken.herokuapp.com)
+[Check this out](aszken.herokuapp.com)
